@@ -51,8 +51,8 @@ public abstract class MixinBlockState extends MixinStateHolder<Block, BlockState
         BridgeBlockState stateBridge = (BridgeBlockState) state;
         ((BridgeBlockState) cloned).bridge$setParsedProperties(null);
 
-        for (IProperty parsed : stateBridge.bridge$getParsedProperties().keySet()) {
-            cloned = cloned.with(parsed, state.get(parsed));
+            for (IProperty parsed : stateBridge.bridge$getParsedProperties().keySet()) {
+                cloned = cloned.with(parsed, state.get(parsed));
         }
 
         return (BlockData) cloned;
